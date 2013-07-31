@@ -2,3 +2,6 @@
 
 This is based on the Robb Wolf's Paleo Matrix Documents
 www.robbwolf.com
+
+Paused at: http://guides.rubyonrails.org/getting_started.html
+5.10 Allowing the update of fields
