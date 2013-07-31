@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  body: MyText
+  time: 2013-07-31 14:27:49
+  vegetable_id: 
+
+two:
+  name: MyString
+  body: MyText
+  time: 2013-07-31 14:27:49
+  vegetable_id: 

@@ -11,4 +11,8 @@ class PrepsController < ApplicationController
     	@prep.destroy
     	redirect_to protein_path(@protein)
   	end
+
+  	def index
+  		@preps = Prep.all
+  	end
 end

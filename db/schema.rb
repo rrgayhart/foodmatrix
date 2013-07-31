@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130731170753) do
+ActiveRecord::Schema.define(version: 20130731185544) do
+
+  create_table "marinades", force: true do |t|
+    t.text     "name"
+    t.text     "body"
+    t.time     "time"
+    t.integer  "spice_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "marinades", ["spice_id"], name: "index_marinades_on_spice_id"
 
   create_table "preps", force: true do |t|
     t.string   "name"
@@ -29,6 +40,17 @@ ActiveRecord::Schema.define(version: 20130731170753) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "recipes", force: true do |t|
+    t.string   "name"
+    t.text     "body"
+    t.time     "time"
+    t.integer  "vegetable_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "recipes", ["vegetable_id"], name: "index_recipes_on_vegetable_id"
 
   create_table "spices", force: true do |t|
     t.string   "name"

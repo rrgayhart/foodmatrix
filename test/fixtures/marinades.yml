@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyText
+  body: MyText
+  time: 2013-07-31 14:55:44
+  spice_id: 
+
+two:
+  name: MyText
+  body: MyText
+  time: 2013-07-31 14:55:44
+  spice_id: 
