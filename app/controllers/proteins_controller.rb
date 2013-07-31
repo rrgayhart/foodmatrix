@@ -34,6 +34,13 @@ class ProteinsController < ApplicationController
 			render 'edit'
 		end
 	end
+
+	def destroy
+		@protein = Protein.find(params[:id])
+		@protein.destroy
+
+		redirect_to proteins_path
+	end
 	
 	private
 		def protein_params
