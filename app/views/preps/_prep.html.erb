@@ -7,3 +7,7 @@
   <strong>Preparation Details:</strong>
   <%= prep.body %>
 </p>
+
+<p>
+	<%= link_to 'Destroy Prep', [prep.protein, prep], method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
