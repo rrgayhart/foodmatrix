@@ -1,0 +1,15 @@
+<h1>Listing proteins</h1>
+ 
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Text</th>
+  </tr>
+ 
+  <% @proteins.each do |protein| %>
+    <tr>
+      <td><%= protein.title %></td>
+      <td><%= protein.text %></td>
+    </tr>
+  <% end %>
+</table>
