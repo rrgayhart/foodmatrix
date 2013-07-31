@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @fat.name %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @fat.body %>
+</p>
+
+<%= link_to 'Edit', edit_fat_path(@fat) %> |
+<%= link_to 'Back', fats_path %>

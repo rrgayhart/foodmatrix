@@ -1,5 +1,7 @@
 Foodmatrix::Application.routes.draw do
   
+  resources :fats
+
   resources :recipes
 
   resources :preps
