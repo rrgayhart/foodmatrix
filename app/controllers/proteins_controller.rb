@@ -3,10 +3,14 @@ class ProteinsController < ApplicationController
 	end
 
 	def create
-		@protein = Protein.new(protein_params)
+		@protein = Protein.new(params[:protein].permit(:title, :text))
 
 		@protein.save
 		redirect_to @protein
+	end
+
+	def show
+		@protein = Protein.find(params[:id])
 	end
 
 	private
