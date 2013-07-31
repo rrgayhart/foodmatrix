@@ -1,0 +1,13 @@
+<p>
+  <strong>Name:</strong>
+  <%= marinade.name %>
+</p>
+ 
+<p>
+  <strong>Preparation Details:</strong>
+  <%= marinade.body %>
+</p>
+
+<p>
+	<%= link_to 'Destroy Marinade', [marinade.spice, marinade], method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
