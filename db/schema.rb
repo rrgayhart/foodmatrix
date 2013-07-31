@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130731112516) do
+ActiveRecord::Schema.define(version: 20130731134145) do
+
+  create_table "preps", force: true do |t|
+    t.string   "name"
+    t.text     "body"
+    t.integer  "protein_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "preps", ["protein_id"], name: "index_preps_on_protein_id"
 
   create_table "proteins", force: true do |t|
     t.string   "title"
