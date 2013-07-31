@@ -5,12 +5,16 @@
   <tr>
     <th>Title</th>
     <th>Text</th>
+    <th></th>
+    <th></th>
   </tr>
  
-  <% @proteins.each do |protein| %>
-    <tr>
-      <td><%= protein.title %></td>
-      <td><%= protein.text %></td>
-    </tr>
-  <% end %>
+<% @proteins.each do |protein| %>
+  <tr>
+    <td><%= protein.title %></td>
+    <td><%= protein.text %></td>
+    <td><%= link_to 'Show', protein_path(protein) %></td>
+    <td><%= link_to 'Edit', edit_protein_path(protein) %></td>
+  </tr>
+<% end %>
 </table>
