@@ -1,12 +1,16 @@
 class ProteinsController < ApplicationController
 	def new
+		@protein = Protein.new
 	end
 
 	def create
 		@protein = Protein.new(params[:protein].permit(:title, :text))
 
-		@protein.save
-		redirect_to @protein
+		if @protein.save
+			redirect_to @protein
+		else
+			render 'new'
+		end
 	end
 
 	def show
