@@ -9,17 +9,7 @@
 </p>
 
 <h2>Preparation Recipes:</h2>
-<% @protein.preps.each do |prep| %>
-	<p>
-		<strong>Preparation:</strong>
-		<%= prep.name %>
-	</p>
-
-	<p>
-		<strong>Preparation Details:</strong>
-		<%= prep.body %>
-	</p>
-<% end %>
+<%= render @protein.preps %>
 
 <h2>Add a preparation style:</h2>
 <%= form_for([@protein, @protein.preps.build]) do |f| %>
