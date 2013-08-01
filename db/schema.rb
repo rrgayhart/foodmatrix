@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130801010910) do
+ActiveRecord::Schema.define(version: 20130801185603) do
 
   create_table "fats", force: true do |t|
     t.string   "name"
@@ -64,6 +64,13 @@ ActiveRecord::Schema.define(version: 20130801010910) do
   end
 
   add_index "recipes", ["vegetable_id"], name: "index_recipes_on_vegetable_id"
+
+  create_table "snacks", force: true do |t|
+    t.string   "name"
+    t.text     "body"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "spices", force: true do |t|
     t.string   "name"

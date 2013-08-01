@@ -46,4 +46,5 @@ class ProteinsController < ApplicationController
 		def protein_params
 			params.require(:protein).permit(:title, :text)
 		end
+
 end

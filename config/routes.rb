@@ -1,5 +1,9 @@
 Foodmatrix::Application.routes.draw do
   
+  get "/meals" => "meals#index"
+
+  resources :snacks
+
   resources :fats
 
   resources :recipes
