@@ -7,16 +7,30 @@ class SnacksController < ApplicationController
 		@snacks = Snack.new
 	end
 
-	def show
-		@snack = Snack.find(params[:id])
+	def edit
+		@snack = Snack.find_snack
 	end
 
 	def update
-		@snack = Snack.find(params[:id])
+		@snack = Snack.find_snack
+	end
+
+	def show
+		@snack = Snack.find_snack
+	end
+
+	def update
+		@snack = Snack.find_snack
 		if @snack.update(params[:snack])
 			redirect_to(@book)
 		else
 			render :edit
 		end
+	end
+
+private
+
+	def find_snack
+		snack.find(params[:id])
 	end
 end

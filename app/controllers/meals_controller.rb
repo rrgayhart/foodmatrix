@@ -3,7 +3,7 @@ class MealsController < ApplicationController
 	end
 	
 	def initialize
-		@protein = Protein.first
+		@protein = Protein.all.sample
 	end
 
 
