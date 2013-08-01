@@ -1,0 +1,18 @@
+<p>
+  <strong>Name:</strong>
+  <%= recipe.name %>
+</p>
+ 
+<p>
+  <strong>Recipe Details:</strong>
+  <%= recipe.body %>
+</p>
+
+<p>
+  <strong>Time: In minutes</strong>
+  <%= recipe.time %>
+</p>
+
+<p>
+	<%= link_to 'Destroy Recipe', [recipe.vegetable, recipe], method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
