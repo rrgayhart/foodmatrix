@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130801185603) do
+ActiveRecord::Schema.define(version: 20130802161534) do
 
   create_table "fats", force: true do |t|
     t.string   "name"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20130801185603) do
     t.integer  "protein_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "time"
   end
 
   add_index "preps", ["protein_id"], name: "index_preps_on_protein_id"
