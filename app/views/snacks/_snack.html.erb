@@ -1,0 +1,13 @@
+<p>
+  <strong>Name:</strong>
+  <%= snack.name %>
+</p>
+ 
+<p>
+  <strong>Details:</strong>
+  <%= snack.body %>
+</p>
+
+<p>
+	<%= link_to 'Destroy Snack', @snack, method: :delete, data: { confirm: 'Are you sure?' } %>
+</p>
