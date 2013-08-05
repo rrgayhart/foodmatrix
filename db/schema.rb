@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130802191554) do
+ActiveRecord::Schema.define(version: 20130805030222) do
 
   create_table "fats", force: true do |t|
     t.string   "name"
@@ -20,22 +20,8 @@ ActiveRecord::Schema.define(version: 20130802191554) do
     t.datetime "updated_at"
   end
 
-  create_table "ingrediants", force: true do |t|
+  create_table "ingredients", force: true do |t|
     t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "ingrediants_list_items", id: false, force: true do |t|
-    t.integer "ingrediant_id", null: false
-    t.integer "list_item_id",  null: false
-  end
-
-  add_index "ingrediants_list_items", ["ingrediant_id", "list_item_id"], name: "index_ingrediants_list_items_on_ingrediant_id_and_list_item_id"
-
-  create_table "list_items", force: true do |t|
-    t.integer  "ingrediant_id"
-    t.integer  "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -57,6 +43,14 @@ ActiveRecord::Schema.define(version: 20130802191554) do
     t.datetime "updated_at"
   end
 
+  create_table "prep_ingredients", force: true do |t|
+    t.integer  "prep_id"
+    t.integer  "ingredient_id"
+    t.integer  "quantity"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "preps", force: true do |t|
     t.string   "name"
     t.text     "body"
@@ -71,6 +65,14 @@ ActiveRecord::Schema.define(version: 20130802191554) do
   create_table "proteins", force: true do |t|
     t.string   "title"
     t.text     "text"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "recipe_ingredients", force: true do |t|
+    t.integer  "recipe_id"
+    t.integer  "ingredient_id"
+    t.integer  "quantity"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
