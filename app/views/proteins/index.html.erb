@@ -1,4 +1,4 @@
-<h1>Listing proteins</h1>
+<h1>Listing Proteins</h1>
  
 <table>
   <tr>
@@ -11,7 +11,7 @@
 <% @proteins.each do |protein| %>
   <tr>
     <td><%= protein.title %></td>
-    <td><%= protein.text %></td>
+    <td class="text"><%= protein.text %></td>
     <td><%= link_to 'Show', protein_path(protein) %></td>
     <td><%= link_to 'Edit', edit_protein_path(protein) %></td>
     <td><%= link_to 'Destroy', protein_path(protein), method: :delete, data: { confirm: 'Are you sure?' } %></td>

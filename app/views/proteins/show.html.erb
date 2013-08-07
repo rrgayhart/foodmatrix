@@ -11,8 +11,12 @@
 <h2>Preparation Recipes:</h2>
 <%= render @protein.preps %>
 
-<h2>Add a preparation style:</h2>
-<%= render "preps/form" %>
- 
-<%= link_to 'Edit Protein', edit_protein_path(@protein) %> |
-<%= link_to 'Back to Proteins', proteins_path %>
+<div class="form">
+	<h2>Add a Preparation Style:</h2>
+	<%= render "preps/form" %>
+ </div>
+<p></p>
+<div class="food_bottom"
+	<%= link_to 'Edit Protein', edit_protein_path(@protein) %> |
+	<%= link_to 'Back to Proteins', proteins_path %>
+</div>

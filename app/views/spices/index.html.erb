@@ -15,7 +15,7 @@
     <% @spices.each do |spice| %>
       <tr>
         <td><%= spice.name %></td>
-        <td><%= spice.body %></td>
+        <td class="text"><%= spice.body %></td>
         <td><%= link_to 'Show', spice %></td>
         <td><%= link_to 'Edit', edit_spice_path(spice) %></td>
         <td><%= link_to 'Destroy', spice, method: :delete, data: { confirm: 'Are you sure?' } %></td>

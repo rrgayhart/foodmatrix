@@ -8,17 +8,20 @@
 </head>
 <body>
 <div class="top">
-	<div class ="logo">
+	<div id ="logo">
 <%= link_to 'Food Matrix', root_path %>
 	</div>
+	<div class="logo_words">
 <%= link_to "Proteins", controller: "proteins" %>
 <%= link_to "Vegetables", controller: "vegetables" %>
 <%= link_to "Spices", controller: "spices" %>
 <%= link_to "Fats", controller: "fats" %>
 <%= link_to "Snacks", controller: "snacks" %>
+	</div>
 </div>
-
+<div class="page">
 <%= yield %>
-
+</div>
 </body>
-</html>
+</html
+

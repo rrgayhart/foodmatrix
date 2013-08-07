@@ -1,22 +1,69 @@
 /*
 *= require 'welcome'
 */
-body {
-	font-family:Verdana, Arial, sans-serif;
-	font-size: 16px;
-}
 
-.logo {
-	text-align: center;
-	font-size: 40px;
+a:link {text-decoration:none; color:#0D0C0D;}
+a:visited {text-decoration:none; color:#0D0C0D;}
+a:hover {text-decoration:none; color:#666666;}
+a:active {text-decoration:none; color:#666666;}
+.logo_words a:link {text-decoration:none;color:#F8F8Fa;}
+.logo_words a:visited {text-decoration:none; color:#F8F8Fa;}
+.logo_words a:hover {text-decoration:none; color:#0D0C0D;}
+.logo_words a:active {text-decoration:none; color:#0D0C0D;}
+
+body {
+	font-family: Verdana, Arial, sans-serif;
+	font-size: 16px;
+	padding: 15px;
+	background-color: #FDFDFD;
+	line-height: 1.5em;
+	text-align:justify;
 }
 
 .top {
 	text-align: center;
+	border: 2px solid #B9B6B5;
+	background-color: #DBD9D6;
+	padding-top: 10px;
+	width: 100%;
+	min-width: 600px;
 }
 
-#generate_meal{
+.logo_words {
+	font-size: 20px;
+	word-spacing: 2.5em;
+	margin-top: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #949092;
+	color: #F8F8Fa;
+}
+
+#logo {
+	text-decoration: none;
 	text-align: center;
-	font-size: 25px;
+	font-size: 40px;
+	text-transform: uppercase;
+	word-spacing: 0em;
+	margin-top: 5px;
 }
 
+
+
+.text {
+	font-style: oblique;
+	font-size: 85%;
+	text-align: center;
+}
+
+.form {
+	border: 2px solid;
+	padding: 10px;
+	min-width: 350px;
+	max-width: 375px;
+
+}
+
+.form_preparation {
+	
+}

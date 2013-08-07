@@ -15,7 +15,7 @@
     <% @vegetables.each do |vegetable| %>
       <tr>
         <td><%= vegetable.name %></td>
-        <td><%= vegetable.body %></td>
+        <td class="text"><%= vegetable.body %></td>
         <td><%= link_to 'Show', vegetable %></td>
         <td><%= link_to 'Edit', edit_vegetable_path(vegetable) %></td>
         <td><%= link_to 'Destroy', vegetable, method: :delete, data: { confirm: 'Are you sure?' } %></td>
