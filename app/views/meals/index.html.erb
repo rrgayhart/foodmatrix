@@ -1,20 +1,20 @@
-<h2><%= @protein.title %></h2>
-<% if @prep %>
-	<p><%= @prep.name %></p>
-	<p><%= @prep.body %></p>
-	<p>Minutes: <%= @prep.time %></p>
+<h2><%= @meal.protein.title %></h2>
+<% if @meal.prep %>
+	<p><%= @meal.prep.name %></p>
+	<p><%= @meal.prep.body %></p>
+	<p>Minutes: <%= @meal.prep.time %></p>
 <% end %>
-<h2><%= @vegetable.name %></h2>
-<% if @recipe %>
-	<p><%= @recipe.name %></p>
-	<p><%= @recipe.body %></p>
-	<p>Minutes: <%= @recipe.time %></p>
+<h2><%= @meal.vegetable.name %></h2>
+<% if @meal.recipe %>
+	<p><%= @meal.recipe.name %></p>
+	<p><%= @meal.recipe.body %></p>
+	<p>Minutes: <%= @meal.recipe.time %></p>
 <% end %>
-<h2><%= @spice.name %></h2>
-<% if @marinade %>
-	<p><%= @marinade.name %></p>
-	<p><%= @marinade.body %></p>
-	<p>Minutes: <%= @marinade.time %></p>
+<h2><%= @meal.spice.name %></h2>
+<% if @meal.marinade %>
+	<p><%= @meal.marinade.name %></p>
+	<p><%= @meal.marinade.body %></p>
+	<p>Minutes: <%= @meal.marinade.time %></p>
 <% end %>
 
 
