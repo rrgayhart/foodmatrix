@@ -7,6 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div class="top">
+	<div class ="logo">
+<%= link_to 'Food Matrix', root_path %>
+	</div>
+<%= link_to "Proteins", controller: "proteins" %>
+<%= link_to "Vegetables", controller: "vegetables" %>
+<%= link_to "Spices", controller: "spices" %>
+<%= link_to "Fats", controller: "fats" %>
+<%= link_to "Snacks", controller: "snacks" %>
+</div>
 
 <%= yield %>
 
