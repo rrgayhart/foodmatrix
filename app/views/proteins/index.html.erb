@@ -1,20 +1,21 @@
 <h1>Listing Proteins</h1>
  
 <table class="food_index">
-  <tr>
-    <th>Title</th>
+  <tr class="food_index_tr">
+    <th >Title</th>
     <th>Text</th>
+    <th></th>
     <th></th>
     <th></th>
   </tr>
  
 <% @proteins.each do |protein| %>
   <tr>
-    <td><%= protein.title %></td>
+    <td><%= link_to protein.title, protein_path(protein) %></td>
     <td class="text"><%= protein.text %></td>
     <td><%= link_to 'Show', protein_path(protein) %></td>
     <td><%= link_to 'Edit', edit_protein_path(protein) %></td>
-    <td><%= link_to 'Destroy', protein_path(protein), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= link_to 'Delete', protein_path(protein), method: :delete, data: { confirm: 'Are you sure?' } %></td>
   </tr>
 <% end %>
 </table>
