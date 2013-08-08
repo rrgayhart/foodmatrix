@@ -11,13 +11,13 @@
 	<div id ="logo">
 <%= link_to 'Food Matrix', root_path %>
 	</div>
-	<div class="logo_words">
-<%= link_to "Proteins", controller: "proteins" %>
-<%= link_to "Vegetables", controller: "vegetables" %>
-<%= link_to "Spices", controller: "spices" %>
-<%= link_to "Fats", controller: "fats" %>
-<%= link_to "Snacks", controller: "snacks" %>
-	</div>
+	<ul class="logo_words">
+<li class="logo_word_lis"><%= link_to "Proteins", controller: "proteins" %></li>
+<li class="logo_word_lis"><%= link_to "Vegetables", controller: "vegetables" %></li>
+<li class="logo_word_lis"><%= link_to "Spices", controller: "spices" %></li>
+<li class="logo_word_lis"><%= link_to "Fats", controller: "fats" %></li>
+<li class="logo_word_lis"><%= link_to "Snacks", controller: "snacks" %></li>
+	</ul>
 </div>
 <div class="page">
 <%= yield %>
