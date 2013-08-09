@@ -1,8 +1,12 @@
 Foodmatrix::Application.routes.draw do
   
+  root 'welcome#index'
   resources :users
-  
+  resources :sessions, only: [:new, :create, :destroy]
   match '/signup', to: 'users#new', via: 'get'
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
+  
   get "/meals" => "meals#index"
 
   resources :snacks
@@ -23,6 +27,6 @@ Foodmatrix::Application.routes.draw do
   	resources :preps
   end
  
-  root 'welcome#index'
+  
 end
 
