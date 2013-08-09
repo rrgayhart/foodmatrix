@@ -11,6 +11,11 @@ a:active {text-decoration:none; color:#666666;}
 .logo_words a:visited {text-decoration:none; color:#F8F8Fa;}
 .logo_words a:hover {text-decoration:none; color:#0D0C0D;}
 .logo_words a:active {text-decoration:none; color:#0D0C0D;}
+/* Will need to figure out how to add these together */
+.footer_words a:link {text-decoration:none;color:#F8F8Fa;}
+.footer_words a:visited {text-decoration:none; color:#F8F8Fa;}
+.footer_words a:hover {text-decoration:none; color:#0D0C0D;}
+.footer_words a:active {text-decoration:none; color:#0D0C0D;}
 
 body {
 	font-family: Verdana, Arial, sans-serif;
@@ -60,7 +65,25 @@ body {
 	margin-bottom: 30px;
 }
 
+.footer {
+	padding-top: 30px
+}
 
+.footer_words {
+	font-size: 18px;
+	margin: 0px auto 0px auto;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: #949092;
+	color: #F8F8Fa;
+}
+
+.footer_word_lis {
+	display: inline;
+	margin-left: 10px;
+	margin-right: 10px;
+}
 
 .text {
 	font-style: oblique;

@@ -20,23 +20,24 @@
 	</ul>
 </div>
 <div class="page">
-<%= yield %>
+  <%= yield %>
 </div>
-<div class="footer">
-	<% if signed_in? %>
-            <li><%= link_to "Users", '#' %></li>
-              <ul>
-                <li><%= link_to "Profile", current_user %></li>
-                <li><%= link_to "Settings", edit_user_path(current_user) %></li>
-                <li>
-                  <%= link_to "Sign out", signout_path, method: "delete" %>
-                </li>
-              </ul>
-            </li>
-          <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
-          <% end %>
-</div>
+  <div class="footer">
+  	<% if signed_in? %>
+      <ul class="footer_words">
+        <li class="footer_word_lis"><%= link_to "Users", users_path %></li>
+        <li class="footer_word_lis"><%= link_to "Profile", current_user %></li>
+        <li class="footer_word_lis"><%= link_to "Settings", edit_user_path(current_user) %></li>
+        <li class="footer_word_lis"><%= link_to "Sign Out", signout_path, method: "delete" %></li>
+      </ul>
+    <% else %>
+        <ul class="footer_words">
+          <li class="footer_word_lis"><%= link_to "Sign up now", signup_path %></li>
+          <li class="footer_word_lis">or</li>
+          <li class="footer_word_lis"><%= link_to "Sign in", signin_path %></li>
+        </ul>
+    <% end %>
+  </div>
 </body>
 </html
 
