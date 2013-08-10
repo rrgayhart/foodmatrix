@@ -1,6 +1,6 @@
 class VegetablesController < ApplicationController
-  before_action :set_vegetable, only: [:show, :edit, :update, :destroy]
-
+  before_action :signed_in_user, only: [:create, :edit, :destroy]
+  before_action :admin_user, only: [:create, :edit, :destroy]
   # GET /vegetables
   # GET /vegetables.json
   def index

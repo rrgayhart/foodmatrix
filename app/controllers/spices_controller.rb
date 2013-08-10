@@ -1,6 +1,6 @@
 class SpicesController < ApplicationController
-  before_action :set_spice, only: [:show, :edit, :update, :destroy]
-
+  before_action :signed_in_user, only: [:create, :edit, :destroy]
+  before_action :admin_user, only: [:create, :edit, :destroy]
   # GET /spices
   # GET /spices.json
   def index

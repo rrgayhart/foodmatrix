@@ -1,5 +1,6 @@
 class ProteinsController < ApplicationController
 	before_action :signed_in_user, only: [:create, :edit, :destroy]
+	before_action :admin_user, only: [:create, :edit, :destroy]
 	def new
 		@protein = Protein.new
 	end

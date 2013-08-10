@@ -1,5 +1,6 @@
 class PrepsController < ApplicationController
-  before_action :signed_in_user, only: [:create, :destroy]
+  before_action :signed_in_user, only: [:create, :edit, :destroy]
+  before_action :admin_user, only: [:create, :edit, :destroy]
 	def create
     	@protein = Protein.find(params[:protein_id])
     	@prep = @protein.preps.create(params[:prep].permit(:name, :body, :time))
@@ -16,4 +17,10 @@ class PrepsController < ApplicationController
   	def index
   		@preps = Prep.all
   	end
+
+    def edit
+    end
+
+    def destroy
+    end
 end

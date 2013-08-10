@@ -1,4 +1,6 @@
 class SnacksController < ApplicationController
+	before_action :signed_in_user, only: [:create, :edit, :destroy]
+	before_action :admin_user, only: [:create, :edit, :destroy]
 	def index
 		@snacks = Snack.all
 	end
