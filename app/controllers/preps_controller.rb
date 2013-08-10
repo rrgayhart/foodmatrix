@@ -1,4 +1,5 @@
 class PrepsController < ApplicationController
+  before_action :signed_in_user, only: [:create, :destroy]
 	def create
     	@protein = Protein.find(params[:protein_id])
     	@prep = @protein.preps.create(params[:prep].permit(:name, :body, :time))

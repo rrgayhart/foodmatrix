@@ -1,6 +1,7 @@
 Foodmatrix::Application.routes.draw do
   
   root 'welcome#index'
+  
   resources :users
   resources :sessions, only: [:new, :create, :destroy]
   match '/signup', to: 'users#new', via: 'get'
@@ -9,24 +10,29 @@ Foodmatrix::Application.routes.draw do
   
   get "/meals" => "meals#index"
 
+  resources :ingrediants
+
+  resources :prep_ingrediants
+
+  resources :preps
+
+  resources :proteins do
+    resources :preps
+      resources :prep_ingrediants
+  end
+ # Not sure if I should nest prep_ingrediants under preps like this
+
   resources :snacks
 
   resources :fats
 
   resources :recipes
 
-  resources :preps
-
   resources :spices
 
   resources :vegetables do
   	resources :recipes
   end
-
-  resources :proteins do
-  	resources :preps
-  end
- 
   
 end
 

@@ -1,4 +1,5 @@
 class ProteinsController < ApplicationController
+	before_action :signed_in_user, only: [:create, :edit, :destroy]
 	def new
 		@protein = Protein.new
 	end
@@ -15,6 +16,7 @@ class ProteinsController < ApplicationController
 
 	def show
 		@protein = Protein.find(params[:id])
+		@preps = @protein.preps.paginate(page: params[:page]) #makes the paginate function work
 	end
 
 	def index

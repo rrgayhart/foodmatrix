@@ -8,8 +8,15 @@
   <%= @protein.text %>
 </p>
 
-<h2>Preparation Recipes:</h2>
-<%= render @protein.preps %>
+<div class="prep_or_recipe">
+	<% if @protein.preps.any? %>
+		<h2>Preparation Recipes: (<%= @protein.preps.count %>)</h2>
+		<ol class="preps_list">
+			<%= render @protein.preps %>
+		</ol>
+		<%= will_paginate @preps %>
+	<% end %>
+</div>
 
 <div class="form">
 	<h2>Add a Preparation Style:</h2>
