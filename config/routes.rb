@@ -10,17 +10,17 @@ Foodmatrix::Application.routes.draw do
   
   get "/meals" => "meals#index"
 
-  resources :ingrediants
+  resources :ingredients
 
-  resources :prep_ingrediants
+  resources :prep_ingredients
 
-  resources :preps
+  resources :preps do
+    resources :prep_ingredients
+  end
 
   resources :proteins do
     resources :preps
-      resources :prep_ingrediants
   end
- # Not sure if I should nest prep_ingrediants under preps like this
 
   resources :snacks
 

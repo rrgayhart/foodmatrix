@@ -1,0 +1,9 @@
+<% provide(:title, 'All Ingredients') %>
+<h1>All Ingredients</h1>
+
+<ul>
+  	<%= render @ingredients %>
+</ul>
+
+
+	<%= link_to 'Add Ingredient', new_ingredient_path(@ingredient) %>

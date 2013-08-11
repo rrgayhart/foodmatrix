@@ -15,6 +15,14 @@
   <%= prep.time %>
 </p>
 
+<ul>
+	<% prep.prep_ingredients.each do |prep_ingredient| %>
+	<li>
+		<%= prep_ingredient.quantity %> <%= prep_ingredient.ingredient.name %>
+	</li>
+	<% end %>
+</ul>
+
 <p>
 	<%= link_to 'Destroy Prep', @prep, method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>

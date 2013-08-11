@@ -1,0 +1,17 @@
+<% provide(:title, 'Edit Ingredient') %>
+<h1>Edit Ingredient</h1>
+  <div>
+    <%= form_for @ingredient do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+    <%= link_to 'Back', ingredients_path %>
+  
+  </div>

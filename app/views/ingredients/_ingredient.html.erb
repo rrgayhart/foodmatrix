@@ -1,0 +1,6 @@
+<li>
+    <%= link_to ingredient.name, ingredient %>
+    | <%= link_to 'edit', edit_ingredient_path(ingredient) %> 
+    | <%= link_to "delete", ingredient, method: :delete,
+                                  data: { confirm: "You sure?" } %>
+</li>
