@@ -1,4 +1,5 @@
 class GroceryList < ActiveRecord::Base
-	belongs_to :user
+	has_many :gls
+	has_many :users, through: :gls
 	has_many :ingredients
 end

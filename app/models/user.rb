@@ -8,7 +8,8 @@ class User < ActiveRecord::Base
 		uniqueness: { case_sensitive: false }
 	has_secure_password
 	validates :password, length: { minimum: 6 }
-	has_one :grocery_list
+	has_one :gl
+	has_ many :grocery_lists, through: :gls
 	
 
 	def User.new_remember_token

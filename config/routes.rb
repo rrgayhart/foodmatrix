@@ -37,10 +37,16 @@ Foodmatrix::Application.routes.draw do
   end
 
   resources :users do
-    resources :grocery_lists
+    resources :gls
   end
 
   resources :grocery_lists
+
+  resources :gls
+
+  resources :gls do
+    resources :grocery_lists
+  end
   
 end
 
