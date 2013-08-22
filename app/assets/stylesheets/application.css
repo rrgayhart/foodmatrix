@@ -1,6 +1,7 @@
 /*
 *= require 'welcome'
 *= require 'proteins'
+*= require 'meals'
 */
 
 a:link {text-decoration:none; color:#0D0C0D;}
@@ -67,6 +68,7 @@ body {
 
 .footer {
 	padding-top: 30px
+	overflow: auto;
 }
 
 .footer_words {

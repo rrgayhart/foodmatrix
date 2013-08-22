@@ -1,22 +1,30 @@
-<h2><%= @meal.protein.title %></h2>
-<% if @meal.prep %>
-	<p><%= @meal.prep.name %></p>
-	<p><%= @meal.prep.body %></p>
-	<p>Minutes: <%= @meal.prep.time %></p>
-<% end %>
-<h2><%= @meal.vegetable.name %></h2>
-<% if @meal.recipe %>
-	<p><%= @meal.recipe.name %></p>
-	<p><%= @meal.recipe.body %></p>
-	<p>Minutes: <%= @meal.recipe.time %></p>
-<% end %>
-<h2><%= @meal.spice.name %></h2>
-<% if @meal.marinade %>
-	<p><%= @meal.marinade.name %></p>
-	<p><%= @meal.marinade.body %></p>
-	<p>Minutes: <%= @meal.marinade.time %></p>
-<% end %>
-
-
-<%= link_to 'Try Again', meals_path %>
-<p><%= link_to 'Home', root_path %></p>
+<div id="content">
+	<div class="column1of3">
+		<h2><%= @meal.protein.title %></h2>
+		<% if @meal.prep %>
+			<p><%= @meal.prep.name %></p>
+			<p><%= @meal.prep.body %></p>
+			<p>Minutes: <%= @meal.prep.time %></p>
+		<% end %>
+	</div>
+	<div class="column2of3">
+		<h2><%= @meal.vegetable.name %></h2>
+		<% if @meal.recipe %>
+			<p><%= @meal.recipe.name %></p>
+			<p><%= @meal.recipe.body %></p>
+			<p>Minutes: <%= @meal.recipe.time %></p>
+		<% end %>
+	</div>
+	<div class="column3of3">
+		<h2><%= @meal.spice.name %></h2>
+		<% if @meal.marinade %>
+			<p><%= @meal.marinade.name %></p>
+			<p><%= @meal.marinade.body %></p>
+			<p>Minutes: <%= @meal.marinade.time %></p>
+		<% end %>
+	</div>
+	<div id="footer">
+		<p><%= link_to 'Try Again', meals_path %></p>
+		<p><%= link_to 'Home', root_path %></p>
+	</div>
+</div>
