@@ -1,5 +1,7 @@
 Foodmatrix::Application.routes.draw do
   
+  resources :gls
+
   root 'welcome#index'
   
   resources :users

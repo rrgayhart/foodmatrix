@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Grocery list:</strong>
+  <%= @gl.grocery_list_id %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @gl.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_gl_path(@gl) %> |
+<%= link_to 'Back', gls_path %>
