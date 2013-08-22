@@ -9,7 +9,7 @@ class User < ActiveRecord::Base
 	has_secure_password
 	validates :password, length: { minimum: 6 }
 	has_one :gl
-	has_ many :grocery_lists, through: :gls
+	has_many :grocery_lists, through: :gls
 	
 
 	def User.new_remember_token
