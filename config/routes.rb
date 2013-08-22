@@ -33,6 +33,12 @@ Foodmatrix::Application.routes.draw do
   resources :vegetables do
   	resources :recipes
   end
+
+  resources :users do
+    resources :grocery_lists
+  end
+
+  resources :grocery_lists
   
 end
 
