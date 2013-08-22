@@ -2,3 +2,11 @@
 
 This is based on the Robb Wolf's Paleo Matrix Documents
 www.robbwolf.com
+
+Short Term Goal: Generate random meals and preparation instructions for users
+
+Mid Term Goal: Add ingredients to all recipes
+
+Long Term Goal: Allow ingrediants to be added to a shopping list - Allow users to keep their own shopping lists
+
+Wish List: Generate meals based on what is in the user's fridge list
