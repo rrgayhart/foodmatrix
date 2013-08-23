@@ -36,7 +36,7 @@ body {
 	min-width: 675px;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
-	-webskit-border-radius: 5px;
+	-webkit-border-radius: 5px;
 }
 
 .logo_words {
@@ -67,7 +67,7 @@ body {
 }
 
 .footer {
-	padding-top: 30px
+	padding-top: 30px;
 	overflow: auto;
 }
 
@@ -101,7 +101,7 @@ body {
 	max-width: 375px;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
-	-webskit-border-radius: 5px;
+	-webkit-border-radius: 5px;
 
 }
 
