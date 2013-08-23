@@ -16,28 +16,28 @@ Foodmatrix::Application.routes.draw do
 
   resources :prep_ingredients
 
-  resources :preps do
+  resources :preps, except: [:create] do
     resources :prep_ingredients
   end
 
   resources :proteins do
-    resources :preps
+    resources :preps, controller: "protein_preps", only: [:create]
   end
 
   resources :snacks do
-    resources :preps
+    resources :preps, controller: "snack_preps", only: [:create]
   end
 
   resources :fats do
-    resources :preps
+    resources :preps, controller: "fat_preps", only: [:create]
   end
 
   resources :spices do
-    resources :preps
+    resources :preps, controller: "spice_preps", only: [:create]
   end
 
   resources :vegetables do
-  	resources :preps
+  	resources :preps, controller: "vegetable_preps", only: [:create]
   end
 
   resources :users do
