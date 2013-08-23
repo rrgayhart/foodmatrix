@@ -1,6 +1,7 @@
 <li>
-    <%= link_to ingredient.name, ingredient %>
+    <strong><%= link_to ingredient.name, ingredient %> </strong> | Measured In:
+    <%= ingredient.unit_of_measure.pluralize %>
     | <%= link_to 'edit', edit_ingredient_path(ingredient) %> 
-    | <%= link_to "delete", ingredient, method: :delete,
+    or  <%= link_to "delete", ingredient, method: :delete,
                                   data: { confirm: "You sure?" } %>
 </li>

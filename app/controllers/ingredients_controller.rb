@@ -7,7 +7,7 @@ class IngredientsController < ApplicationController
 	end
 
 	def create
-		@ingredient = Ingredient.new(params[:ingredient].permit(:name))
+		@ingredient = Ingredient.new(params[:ingredient].permit(:name, :unit_of_measure))
 
 		if @ingredient.save
 			redirect_to @ingredient
@@ -23,7 +23,7 @@ class IngredientsController < ApplicationController
 	def update
 		@ingredient = Ingredient.find(params[:id])
 
-		if @ingredient.update(params[:ingredient].permit(:name))
+		if @ingredient.update(params[:ingredient].permit(:name, :unit_of_measure))
 			redirect_to @ingredient
 		else
 			render 'edit'

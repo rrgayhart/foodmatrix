@@ -15,15 +15,19 @@
   <%= prep.time %>
 </p>
 
+<p>
+  <strong>Ingredients:</strong>
+
 <ul>
 	<% prep.prep_ingredients.each do |prep_ingredient| %>
 	<li>
-		<%= prep_ingredient.quantity %> <%= prep_ingredient.ingredient.name %>
+		 <%= prep_ingredient.ingredient.name.pluralize %>: <%= prep_ingredient.quantity %> <%= prep_ingredient.ingredient.unit_of_measure.pluralize %>
 	</li>
 	<% end %>
 </ul>
-
+</p>
 <p>
 	<%= link_to 'Edit Prep', edit_prep_path(prep) %> | 
 	<%= link_to 'Destroy Prep', prep, method: :delete, data: { confirm: 'Are you sure?' } %>
 </p>
+-------------

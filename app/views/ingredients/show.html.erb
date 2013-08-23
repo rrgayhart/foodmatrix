@@ -2,5 +2,7 @@
 <h1>
 	<%= @ingredient.name %>
 </h1>
-
+<p>
+Measured in: <%= @ingredient.unit_of_measure.pluralize %>
+</p>
 <%= link_to 'Back', ingredients_path %>

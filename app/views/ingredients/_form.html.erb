@@ -1,9 +1,15 @@
 <div>
     <%= form_for(@ingredient) do |f| %>
-
+    <p>
       <%= f.label :name %>
       <%= f.text_field :name %>
-
+    </p>
+    <p>
+      <%= f.label :unit_of_measure %>
+      <%= f.text_field :unit_of_measure %>
+    </p>
+    <p>
       <%= f.submit "Add Ingredient" %>
+    </p>
     <% end %>
 </div>

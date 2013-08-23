@@ -9,7 +9,17 @@ www.robbwolf.com
 
 Short Term: Fix the CSS on the header to include Ingredients Link
 
+Short Term: Add form to create ingredients from prep creation and editing
+
+Short Term: Clean up the bottom footer on the food categories
+
+Short Term: Add a string to the ingredients definining unit of measure for the ingredient and then add it to all views and controllers to display beside the quantity
+
+Mid Term: Update generate meal so that snacks can be added or that they have a seperate generator
+
 Mid Term: Visually style for better performance
+
+Mid Term: Remove text from the food category items // Replace it with a count and link to preps list for that food category
 
 Long Term Goal: Allow ingrediants to be added to a shopping list - Allow users to keep their own shopping lists
 
