@@ -6,5 +6,5 @@ class CreateGls < ActiveRecord::Migration
 
       t.timestamps
     end
-   
+  end 
 end
