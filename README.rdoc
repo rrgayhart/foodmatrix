@@ -3,17 +3,13 @@
 This is based on the Robb Wolf's Paleo Matrix Documents
 www.robbwolf.com
 
-<<Completed!>> Short Term Goal: Generate random meals and preparation instructions for users
-
-<<Completed!>> Mid Term Goal: Add ingredients to all recipes
-
 Short Term: Fix the CSS on the header to include Ingredients Link
 
 Short Term: Add form to create ingredients from prep creation and editing
 
 Short Term: Clean up the bottom footer on the food categories
 
-Short Term: Add a string to the ingredients definining unit of measure for the ingredient and then add it to all views and controllers to display beside the quantity
+Short Term: Figure out how to impliment pluralize without crashing heroku for the ingredient units of measure
 
 Mid Term: Update generate meal so that snacks can be added or that they have a seperate generator
 
@@ -21,7 +17,14 @@ Mid Term: Visually style for better performance
 
 Mid Term: Remove text from the food category items // Replace it with a count and link to preps list for that food category
 
+Mid Term: Make sure user permissions to delete and edit are correct - inclusive of ingredients
+
 Long Term Goal: Allow ingrediants to be added to a shopping list - Allow users to keep their own shopping lists
 
 Wish List: Generate meals based on what is in the user's fridge list
 
+<<Completed!>> Short Term: Add a string to the ingredients definining unit of measure for the ingredient and then add it to all views and controllers to display beside the quantity
+
+<<Completed!>> Short Term Goal: Generate random meals and preparation instructions for users
+
+<<Completed!>> Mid Term Goal: Add ingredients to all recipes
