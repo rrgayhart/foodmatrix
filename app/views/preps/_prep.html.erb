@@ -21,7 +21,7 @@
 <ul>
 	<% prep.prep_ingredients.each do |prep_ingredient| %>
 	<li>
-		 <%= prep_ingredient.ingredient.name.pluralize %>: <%= prep_ingredient.quantity %> <%= prep_ingredient.ingredient.unit_of_measure.pluralize %>
+		 <%= prep_ingredient.ingredient.name %>: <%= prep_ingredient.quantity %> <%= prep_ingredient.ingredient.unit_of_measure %>
 	</li>
 	<% end %>
 </ul>
