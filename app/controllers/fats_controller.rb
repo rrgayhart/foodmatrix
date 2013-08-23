@@ -22,6 +22,7 @@ class FatsController < ApplicationController
 
   # GET /fats/1/edit
   def edit
+    @fat = Fat.find(params[:id])
   end
 
   # POST /fats

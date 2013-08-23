@@ -10,9 +10,13 @@ class SnacksController < ApplicationController
 	end
 
 	def create
-		@snack = Snack.new(params.require(:snack).permit(:name, :body))
-		@snack.save
-		redirect_to snacks_path
+		@snack = Snack.new(params[:snack].permit(:name, :body))
+
+		if @snack.save
+			redirect_to @snack
+		else
+			render 'new'
+		end
 	end
 
 	def edit
@@ -21,10 +25,17 @@ class SnacksController < ApplicationController
 
 	def update
 		@snack = find_snack
+
+		if @snack.update(params[:snack].permit(:name, :body))
+			redirect_to @snack
+		else
+			render 'edit'
+		end
 	end
 
 	def show
 		@snack = find_snack
+		@preps = @snack.preps.paginate(page: params[:page]) #makes the paginate function work
 	end
 
 	def update

@@ -1,0 +1,19 @@
+	<div class="form_preparation">
+<%= form_for([@vegetable, @vegetable.preps.build]) do |f| %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.label :time %><br />
+    <%= f.number_field :time %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+</div>

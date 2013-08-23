@@ -1,6 +1,22 @@
-<h1>Snack</h1>
 
 <%= render @snack %>
 
-<%= link_to 'Show', @snack %> |
-<%= link_to 'Back', snacks_path %>
+<div class="prep_or_recipe">
+	<% if @snack.preps.any? %>
+		<h2>Preparation Recipes: (<%= @snack.preps.count %>)</h2>
+		<ol class="preps_list">
+			<%= render @snack.preps %>
+		</ol>
+		<%= will_paginate @preps %>
+	<% end %>
+</div>
+
+<div class="form">
+	<h2>Add a Preparation Style:</h2>
+	<%= render "snacks/prepform" %>
+ </div>
+<p></p>
+<div class="food_bottom">
+	<%= link_to 'Edit Snack', edit_snack_path(@snack) %> |
+	<%= link_to 'Back to Snacks', snacks_path %>
+</div>

@@ -1,30 +1,23 @@
 <h1>Listing Snacks</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Body</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @snacks.each do |snack| %>
-      <tr>
-        <td><%= snack.name %></td>
-        <td class="text"><%= snack.body %></td>
-        <td><%= link_to 'Show', snack %></td>
-        <td><%= link_to 'Edit', edit_snack_path(snack) %></td>
-        <td><%= link_to 'Destroy', snack, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+ 
+<table class="food_index">
+  <tr class="food_index_tr">
+    <th >Title</th>
+    <th>Text</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+<% @snacks.each do |snack| %>
+  <tr>
+    <td><%= link_to snack.name, snack_path(snack) %></td>
+    <td class="text"><%= snack.name %></td>
+    <td><%= link_to 'Show', snack_path(snack) %></td>
+    <td><%= link_to 'Edit', edit_snack_path(snack) %></td>
+    <td><%= link_to 'Delete', snack_path(snack), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
 </table>
-
-<br>
-
 <%= link_to 'New Snack', new_snack_path %>
 <%= link_to 'Home', root_path %>

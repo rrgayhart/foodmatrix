@@ -10,6 +10,8 @@ class VegetablesController < ApplicationController
   # GET /vegetables/1
   # GET /vegetables/1.json
   def show
+    @vegetable = Vegetable.find(params[:id])
+    @vegetables = @vegetable.preps.paginate(page: params[:page]) #makes the paginate function work
   end
 
   # GET /vegetables/new
@@ -19,46 +21,40 @@ class VegetablesController < ApplicationController
 
   # GET /vegetables/1/edit
   def edit
+    @vegetable = Vegetable.find(params[:id])
   end
 
   # POST /vegetables
   # POST /vegetables.json
   def create
-    @vegetable = Vegetable.new(vegetable_params)
+    @vegetable = Vegetable.new(params[:vegetable].permit(:name, :body))
 
-    respond_to do |format|
-      if @vegetable.save
-        format.html { redirect_to @vegetable, notice: 'Vegetable was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @vegetable }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @vegetable.errors, status: :unprocessable_entity }
-      end
+    if @vegetable.save
+      redirect_to @vegetable
+    else
+      render 'new'
     end
   end
 
   # PATCH/PUT /vegetables/1
   # PATCH/PUT /vegetables/1.json
   def update
-    respond_to do |format|
-      if @vegetable.update(vegetable_params)
-        format.html { redirect_to @vegetable, notice: 'Vegetable was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @vegetable.errors, status: :unprocessable_entity }
-      end
+    @vegetable = Vegetable.find(params[:id])
+
+    if @vegetable.update(params[:vegetable].permit(:name, :body))
+      redirect_to @vegetable
+    else
+      render 'edit'
     end
   end
 
   # DELETE /vegetables/1
   # DELETE /vegetables/1.json
   def destroy
+    @vegetable = Vegetable.find(params[:id])
     @vegetable.destroy
-    respond_to do |format|
-      format.html { redirect_to vegetables_url }
-      format.json { head :no_content }
-    end
+
+    redirect_to vegetables_path
   end
 
   private

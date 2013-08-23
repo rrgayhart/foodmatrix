@@ -1,30 +1,23 @@
 <h1>Listing spices</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Body</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @spices.each do |spice| %>
-      <tr>
-        <td><%= spice.name %></td>
-        <td class="text"><%= spice.body %></td>
-        <td><%= link_to 'Show', spice %></td>
-        <td><%= link_to 'Edit', edit_spice_path(spice) %></td>
-        <td><%= link_to 'Destroy', spice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<table class="food_index">
+  <tr class="food_index_tr">
+    <th >Title</th>
+    <th>Text</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+<% @spices.each do |spice| %>
+  <tr>
+    <td><%= link_to spice.name, spice_path(spice) %></td>
+    <td class="text"><%= spice.name %></td>
+    <td><%= link_to 'Show', spice_path(spice) %></td>
+    <td><%= link_to 'Edit', edit_spice_path(spice) %></td>
+    <td><%= link_to 'Delete', spice_path(spice), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
 </table>
-
-<br>
-
 <%= link_to 'New Spice', new_spice_path %>
 <%= link_to 'Home', root_path %>

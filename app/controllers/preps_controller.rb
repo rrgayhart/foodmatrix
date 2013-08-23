@@ -18,8 +18,8 @@ class PrepsController < ApplicationController
 
     def update
       @prep = Prep.find(params[:id])
-      if @prep.update(params[:prep])
-        redirect_to @prep
+      if @prep.update(params[:prep].permit(:name, :body, :time))
+        redirect_to root_path
       else
         render 'edit'
       end

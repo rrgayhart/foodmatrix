@@ -1,64 +1,52 @@
 class SpicesController < ApplicationController
   before_action :signed_in_user, only: [:create, :edit, :destroy]
   before_action :admin_user, only: [:create, :edit, :destroy]
-  # GET /spices
-  # GET /spices.json
+ 
   def index
     @spices = Spice.all
   end
 
-  # GET /spices/1
-  # GET /spices/1.json
   def show
+    @spice = Spice.find(params[:id])
+    @preps = @spice.preps.paginate(page: params[:page]) #makes the paginate function work
   end
 
-  # GET /spices/new
   def new
     @spice = Spice.new
   end
 
-  # GET /spices/1/edit
   def edit
+    @spice = Spice.find(params[:id])
   end
 
-  # POST /spices
-  # POST /spices.json
   def create
-    @spice = Spice.new(spice_params)
+    @spice = Spice.new(params[:spice].permit(:name, :body))
 
-    respond_to do |format|
-      if @spice.save
-        format.html { redirect_to @spice, notice: 'Spice was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @spice }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @spice.errors, status: :unprocessable_entity }
-      end
+    if @spice.save
+      redirect_to @spice
+    else
+      render 'new'
     end
   end
 
-  # PATCH/PUT /spices/1
-  # PATCH/PUT /spices/1.json
+
   def update
-    respond_to do |format|
-      if @spice.update(spice_params)
-        format.html { redirect_to @spice, notice: 'Spice was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: 'edit' }
-        format.json { render json: @spice.errors, status: :unprocessable_entity }
-      end
+    @spice = Spice.find(params[:id])
+
+    if @spice.update(params[:spice].permit(:name, :body))
+      redirect_to @spice
+    else
+      render 'edit'
     end
   end
 
   # DELETE /spices/1
   # DELETE /spices/1.json
   def destroy
+    @spice = Spice.find(params[:id])
     @spice.destroy
-    respond_to do |format|
-      format.html { redirect_to spices_url }
-      format.json { head :no_content }
-    end
+
+    redirect_to spices_path
   end
 
   private

@@ -1,13 +1,26 @@
-<%= form_for(@snack) do |f| %>
-  <div class="field">
+<%= form_for @snack do |f| %>
+  <% if @snack.errors.any? %>
+  <div id="errorExplanation">
+    <h2><%= pluralize(@snack.errors.count, "error") %> prohibited
+      this snack from being saved:</h2>
+    <ul>
+    <% @snack.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
-  </div>
-  <div class="field">
+  </p>
+ 
+  <p>
     <%= f.label :body %><br>
     <%= f.text_area :body %>
-  </div>
-  <div class="actions">
+  </p>
+ 
+  <p>
     <%= f.submit %>
-  </div>
+  </p>
 <% end %>

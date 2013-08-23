@@ -1,14 +1,29 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
+  <strong>Title:</strong>
   <%= @spice.name %>
 </p>
-
+ 
 <p>
-  <strong>Body:</strong>
+  <strong>Text:</strong>
   <%= @spice.body %>
 </p>
 
-<%= link_to 'Edit', edit_spice_path(@spice) %> |
-<%= link_to 'Back', spices_path %>
+<div class="prep_or_recipe">
+	<% if @spice.preps.any? %>
+		<h2>Preparation Recipes: (<%= @spice.preps.count %>)</h2>
+		<ol class="preps_list">
+			<%= render @spice.preps %>
+		</ol>
+		<%= will_paginate @preps %>
+	<% end %>
+</div>
+
+<div class="form">
+	<h2>Add a Preparation Style:</h2>
+	<%= render "spices/prepform" %>
+ </div>
+<p></p>
+<div class="food_bottom">
+	<%= link_to 'Edit Spice', edit_spice_path(@spice) %> |
+	<%= link_to 'Back to Spices', spices_path %>
+</div>
