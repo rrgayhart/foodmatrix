@@ -7,6 +7,8 @@ www.robbwolf.com
 
 <<Completed!>> Mid Term Goal: Add ingredients to all recipes
 
+Short Term: Fix the CSS on the header to include Ingredients Link
+
 Mid Term: Visually style for better performance
 
 Long Term Goal: Allow ingrediants to be added to a shopping list - Allow users to keep their own shopping lists
