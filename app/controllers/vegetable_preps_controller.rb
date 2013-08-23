@@ -5,6 +5,6 @@ class VegetablePrepsController < ApplicationController
 	def create
     	@vegetable = Vegetable.find(params[:vegetable_id])
     	@prep = @vegetable.preps.create(params[:prep].permit(:name, :body, :time))
-    	redirect_to vegetable_path(@vegetable)
+    	redirect_to edit_prep_path(@prep)
 	end
 end

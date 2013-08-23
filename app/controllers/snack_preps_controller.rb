@@ -5,6 +5,6 @@ class SnackPrepsController < ApplicationController
 	def create
     	@snack = Snack.find(params[:snack_id])
     	@prep = @snack.preps.create(params[:prep].permit(:name, :body, :time))
-    	redirect_to snack_path(@snack)
+    	redirect_to edit_prep_path(@prep)
 	end
 end

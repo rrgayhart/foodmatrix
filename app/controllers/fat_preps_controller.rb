@@ -5,6 +5,6 @@ class FatPrepsController < ApplicationController
 	def create
     	@fat = Fat.find(params[:fat_id])
     	@prep = @fat.preps.create(params[:prep].permit(:name, :body, :time))
-    	redirect_to fat_path(@fat)
+    	redirect_to edit_prep_path(@prep)
 	end
 end
