@@ -11,7 +11,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130822180718) do
+ActiveRecord::Schema.define(version: 20130823005033) do
+
+  create_table "fat_preps", force: true do |t|
+    t.integer "prep_id"
+    t.integer "fat_id"
+  end
 
   create_table "fats", force: true do |t|
     t.string   "name"
@@ -37,17 +42,6 @@ ActiveRecord::Schema.define(version: 20130822180718) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  create_table "marinades", force: true do |t|
-    t.text     "name"
-    t.text     "body"
-    t.time     "time"
-    t.integer  "spice_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "marinades", ["spice_id"], name: "index_marinades_on_spice_id"
 
   create_table "meals", force: true do |t|
     t.string   "name"
@@ -83,30 +77,21 @@ ActiveRecord::Schema.define(version: 20130822180718) do
     t.datetime "updated_at"
   end
 
-  create_table "recipe_ingredients", force: true do |t|
-    t.integer  "recipe_id"
-    t.integer  "ingredient_id"
-    t.integer  "quantity"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "snack_preps", force: true do |t|
+    t.integer "prep_id"
+    t.integer "snack_id"
   end
-
-  create_table "recipes", force: true do |t|
-    t.string   "name"
-    t.text     "body"
-    t.integer  "vegetable_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "time"
-  end
-
-  add_index "recipes", ["vegetable_id"], name: "index_recipes_on_vegetable_id"
 
   create_table "snacks", force: true do |t|
     t.string   "name"
     t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "spice_preps", force: true do |t|
+    t.integer "prep_id"
+    t.integer "spice_id"
   end
 
   create_table "spices", force: true do |t|
@@ -128,6 +113,11 @@ ActiveRecord::Schema.define(version: 20130822180718) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+
+  create_table "vegetable_preps", force: true do |t|
+    t.integer "prep_id"
+    t.integer "vegetable_id"
+  end
 
   create_table "vegetables", force: true do |t|
     t.string   "name"
