@@ -1,0 +1,40 @@
+<div class="form_preparation">
+<%= form_for @prep do |f| %>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </p>
+  <p>
+    <%= f.label :time %><br />
+    <%= f.number_field :time %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+</div>
+<ul>
+  <% @prep.prep_ingredients.each do |prep_ingredient| %>
+  <li>
+    <%= pluralize prep_ingredient.quantity, prep_ingredient.ingredient.name  %> | <%= link_to "Remove", prep_prep_ingredient_path(@prep, prep_ingredient), method: :delete %>
+  </li>
+  <% end %>
+</ul>
+<p> Add Ingredient </p>
+<%= form_for [@prep, @prep.prep_ingredients.build] do |f| %>
+  <p>
+    <%= f.label :ingredient_id, "Add Ingredient" %>
+    <%= f.collection_select :ingredient_id, Ingredient.all, :id, :name %>
+  </p>
+  <p>
+    <%= f.label :quantity %>
+    <%= f.number_field :quantity %>
+  </p>
+    <p>
+    <%= f.submit "Add Ingredient" %>
+  </p>
+<% end %>

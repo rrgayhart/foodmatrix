@@ -19,8 +19,15 @@ class PrepsController < ApplicationController
   	end
 
     def edit
+      @prep = Prep.find(params[:id])
     end
 
-    def destroy
+    def update
+      @prep = Prep.find(params[:id])
+      if @prep.update(params[:prep])
+        redirect_to @prep
+      else
+        render 'edit'
+      end
     end
 end

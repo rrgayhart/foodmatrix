@@ -4,8 +4,8 @@ class PrepIngredientsController < ApplicationController
 	
 	def create
     	@prep = Prep.find(params[:prep_id])
-    	@prep_ingredient = @prep.prep_ingredients.create(params[:prep_ingredient].permit(:ingedient_id, :quantity))
-    	redirect_to @prep
+    	@prep_ingredient = @prep.prep_ingredients.create(params[:prep_ingredient].permit(:ingredient_id, :quantity))
+    	redirect_to edit_prep_path(@prep)
   	end
 
   	def new
@@ -16,7 +16,7 @@ class PrepIngredientsController < ApplicationController
     	@prep = Prep.find(params[:prep_id])
     	@prep_ingredient = @prep.prep_ingredients.find(params[:id])
     	@prep_ingredient.destroy
-    	redirect_to prep_path(@protein)
+    	redirect_to edit_prep_path(@prep)
   	end
 
   	def index

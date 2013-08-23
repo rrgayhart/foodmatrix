@@ -1,10 +1,18 @@
 <div id="content">
 	<div class="column1of3">
-		<h2><%= @meal.protein.title %></h2>
+		<h2><%= link_to @meal.protein.title, @meal.protein %></h2>
 		<% if @meal.prep %>
-			<p><%= @meal.prep.name %></p>
+			<h3><%= link_to @meal.prep.name, @meal.prep %></h3>
 			<p><%= @meal.prep.body %></p>
 			<p>Minutes: <%= @meal.prep.time %></p>
+			<p>Ingredients </p>
+			<ul>
+				<% @meal.prep.prep_ingredients.each do |prep_ingredient| %>
+				<li>
+    				<%= pluralize prep_ingredient.quantity, prep_ingredient.ingredient.name %>
+  				</li>
+  				<% end %>
+			</ul>
 		<% end %>
 	</div>
 	<div class="column2of3">
