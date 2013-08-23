@@ -1,13 +1,13 @@
 <div id="content">
 	<div class="column1of3">
 		<h2><%= link_to @meal.protein.title, @meal.protein %></h2>
-		<% if @meal.prep %>
-			<h3><%= link_to @meal.prep.name, @meal.prep %></h3>
-			<p><%= @meal.prep.body %></p>
-			<p>Minutes: <%= @meal.prep.time %></p>
-			<p>Ingredients </p>
+		<% if @meal.prep_protein %>
+			<h3><%= link_to @meal.prep_protein.name, @meal.prep_protein %></h3>
+			<p><%= @meal.prep_protein.body %></p>
+			<p>Minutes: <%= @meal.prep_protein.time %></p>
+			<p>Ingredients: </p>
 			<ul>
-				<% @meal.prep.prep_ingredients.each do |prep_ingredient| %>
+				<% @meal.prep_protein.prep_ingredients.each do |prep_ingredient| %>
 				<li>
     				<%= pluralize prep_ingredient.quantity, prep_ingredient.ingredient.name %>
   				</li>
@@ -16,19 +16,35 @@
 		<% end %>
 	</div>
 	<div class="column2of3">
-		<h2><%= @meal.vegetable.name %></h2>
-		<% if @meal.recipe %>
-			<p><%= @meal.recipe.name %></p>
-			<p><%= @meal.recipe.body %></p>
-			<p>Minutes: <%= @meal.recipe.time %></p>
+		<h2><%= link_to @meal.vegetable.name, @meal.vegetable %></h2>
+		<% if @meal.prep_vegetable %>
+			<h3><%= link_to @meal.prep_vegetable.name, @meal.prep_vegetable %></h3>
+			<p><%= @meal.prep_vegetable.body %></p>
+			<p>Minutes: <%= @meal.prep_vegetable.time %></p>
+			<p>Ingredients: </p>
+			<ul>
+				<% @meal.prep_vegetable.prep_ingredients.each do |prep_ingredient| %>
+				<li>
+    				<%= pluralize prep_ingredient.quantity, prep_ingredient.ingredient.name %>
+  				</li>
+  				<% end %>
+			</ul>
 		<% end %>
 	</div>
 	<div class="column3of3">
-		<h2><%= @meal.spice.name %></h2>
-		<% if @meal.marinade %>
-			<p><%= @meal.marinade.name %></p>
-			<p><%= @meal.marinade.body %></p>
-			<p>Minutes: <%= @meal.marinade.time %></p>
+				<h2><%= link_to @meal.spice.name, @meal.spice %></h2>
+		<% if @meal.prep_spice %>
+			<h3><%= link_to @meal.prep_spice.name, @meal.prep_spice %></h3>
+			<p><%= @meal.prep_spice.body %></p>
+			<p>Minutes: <%= @meal.prep_spice.time %></p>
+			<p>Ingredients: </p>
+			<ul>
+				<% @meal.prep_spice.prep_ingredients.each do |prep_ingredient| %>
+				<li>
+    				<%= pluralize prep_ingredient.quantity, prep_ingredient.ingredient.name %>
+  				</li>
+  				<% end %>
+			</ul>
 		<% end %>
 	</div>
 	<div id="footer">

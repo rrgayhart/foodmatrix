@@ -1,5 +1,5 @@
 class Meal
-	attr_accessor :protein, :vegetable, :spice, :fat, :prep
+	attr_accessor :protein, :vegetable, :spice, :fat, :prep, :prep_protein, :prep_vegetable, :prep_spice 
 
 	def initialize
 		@protein = Protein.order("random()").first
