@@ -24,16 +24,20 @@ Foodmatrix::Application.routes.draw do
     resources :preps
   end
 
-  resources :snacks
+  resources :snacks do
+    resources :preps
+  end
 
-  resources :fats
+  resources :fats do
+    resources :preps
+  end
 
-  resources :recipes
-
-  resources :spices
+  resources :spices do
+    resources :preps
+  end
 
   resources :vegetables do
-  	resources :recipes
+  	resources :preps
   end
 
   resources :users do
