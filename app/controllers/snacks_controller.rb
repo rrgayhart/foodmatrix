@@ -47,6 +47,13 @@ class SnacksController < ApplicationController
 		end
 	end
 
+	def destroy
+		@snack = Snack.find(params[:id])
+		@snack.destroy
+
+		redirect_to snacks_path
+	end
+
 private
 
 	def find_snack
