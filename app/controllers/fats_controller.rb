@@ -11,6 +11,8 @@ class FatsController < ApplicationController
   # GET /fats/1
   # GET /fats/1.json
   def show
+    @fat = Fat.find(params[:id])
+    @preps = @fat.preps.paginate(page: params[:page]) #makes the paginate function work
   end
 
   # GET /fats/new

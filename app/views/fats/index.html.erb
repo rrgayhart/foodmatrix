@@ -1,30 +1,23 @@
-<h1>Listing fats</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Body</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @fats.each do |fat| %>
-      <tr>
-        <td><%= fat.name %></td>
-        <td class="text"><%= fat.body %></td>
-        <td><%= link_to 'Show', fat %></td>
-        <td><%= link_to 'Edit', edit_fat_path(fat) %></td>
-        <td><%= link_to 'Destroy', fat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
+<h1>Listing Fats</h1>
+ 
+<table class="food_index">
+  <tr class="food_index_tr">
+    <th >Title</th>
+    <th>Text</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+ 
+<% @fats.each do |fat| %>
+  <tr>
+    <td><%= link_to fat.name, fat_path(fat) %></td>
+    <td class="text"><%= fat.body %></td>
+    <td><%= link_to 'Show', fat_path(fat) %></td>
+    <td><%= link_to 'Edit', edit_fat_path(fat) %></td>
+    <td><%= link_to 'Delete', fat_path(fat), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
 </table>
-
-<br>
-
 <%= link_to 'New Fat', new_fat_path %>
 <%= link_to 'Home', root_path %>

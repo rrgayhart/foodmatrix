@@ -1,14 +1,29 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Name:</strong>
+  <strong>Title:</strong>
   <%= @fat.name %>
 </p>
-
+ 
 <p>
-  <strong>Body:</strong>
+  <strong>Text:</strong>
   <%= @fat.body %>
 </p>
 
-<%= link_to 'Edit', edit_fat_path(@fat) %> |
-<%= link_to 'Back', fats_path %>
+<div class="prep_or_recipe">
+	<% if @fat.preps.any? %>
+		<h2>Preparation Recipes: (<%= @fat.preps.count %>)</h2>
+		<ol class="preps_list">
+			<%= render @fat.preps %>
+		</ol>
+		<%= will_paginate @preps %>
+	<% end %>
+</div>
+
+<div class="form">
+	<h2>Add a Preparation Style:</h2>
+<%= render "fats/prepform" %>
+ </div>
+<p></p>
+<div class="food_bottom">
+	<%= link_to 'Edit Fat', edit_fat_path(@fat) %> |
+	<%= link_to 'Back to Fats', fats_path %>
+</div>
