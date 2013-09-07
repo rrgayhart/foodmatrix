@@ -23,6 +23,8 @@ Long Term Goal: Allow ingrediants to be added to a shopping list - Allow users t
 
 Wish List: Generate meals based on what is in the user's fridge list
 
+----------
+
 <<Completed!>> Short Term: Add a string to the ingredients definining unit of measure for the ingredient and then add it to all views and controllers to display beside the quantity
 
 <<Completed!>> Short Term Goal: Generate random meals and preparation instructions for users
