@@ -78,6 +78,17 @@ ActiveRecord::Schema.define(version: 20130823154607) do
     t.datetime "updated_at"
   end
 
+  create_table "recipes", force: true do |t|
+    t.string   "name"
+    t.text     "body"
+    t.time     "time"
+    t.integer  "vegetable_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "recipes", ["vegetable_id"], name: "index_recipes_on_vegetable_id"
+
   create_table "snack_preps", force: true do |t|
     t.integer "prep_id"
     t.integer "snack_id"
